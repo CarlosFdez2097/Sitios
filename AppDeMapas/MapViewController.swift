@@ -92,7 +92,7 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
                 
                 for i in Spots
                 {
-                    let coordenadasOrigen = CLLocationCoordinate2DMake(i.latitud, i.longitud)
+                    let coordenadasOrigen = CLLocationCoordinate2D(latitude: i.latitud, longitude: i.longitud)
                     //let pin = Pin(pinId: i.id ,pinTitle: i.nombre, pinSubTitle: i.comentario, location: coordenadasOrigen)
                     var anotacion = MKPointAnnotation()
                     
@@ -108,18 +108,18 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
-   /*func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         print("sjndfgsudfgsijdgfs")
         if annotation is MKUserLocation {
             return nil
         }
         
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customannotation")
-        annotationView.image = UIImage(named:"Recurso 4")
+        annotationView.image = UIImage(named:"recurso7")
         annotationView.canShowCallout = true
         
         return annotationView
-    }*/
+    }
 }
 
 
