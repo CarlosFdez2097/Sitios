@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginController: UIViewController {
     
@@ -14,6 +15,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var login: UIButton!
+    var peticion: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +33,48 @@ class LoginController: UIViewController {
         {
             if(loginPeticion(email: name.text! , password: password.text!))
             {
+                print("segue")
                 performSegue(withIdentifier: "login", sender: nil)
             }
         }
-        
     }
     
-    func loginPeticion(email:String,password:String) -> Bool {
+    func loginPeticion(email:String,password:String) -> Bool
+    {
+        print(email,password)
+        
+        let url: String = "http://localhost:8888/glober/public/api/login"
+        
+        let parameters: Parameters = ["email": email, "password": password]
+        let _headers : HTTPHeaders = ["Content-Type":"application/x-www-form-urlencoded"]
+        
+        Alamofire.request(url, method: .post, parameters: parameters ,encoding: URLEncoding.httpBody , headers: _headers).responseJSON
+        {
+            response in
+            
+            print(response.result.value! , response.response?.statusCode ?? 0)
+            
+            self.peticion = (response.response?.statusCode)!
+            var Respuesta = response.result.value as! [String:String]
+            
+            if(response.response?.statusCode != 200)
+            {
+                print(Respuesta["message"]!)
+                print("error")
+            }else
+            {
+                UserDefaults.standard.set(Respuesta["data"]!, forKey: "Token")
+                print(Respuesta["message"]!)
+                print(Respuesta["data"]!)
+            }
+        }
+        
+        if(peticion != 200)
+        {
+            print("error false")
+            return false
+        }
+        print("todo bien ")
         return true
     }
     

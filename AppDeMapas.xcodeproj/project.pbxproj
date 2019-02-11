@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F16E23D220064A600EE9EFC /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F16E23C220064A600EE9EFC /* Pin.swift */; };
 		7F2063DD21E5FAA600082D80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2063DC21E5FAA600082D80 /* AppDelegate.swift */; };
 		7F2063DF21E5FAA600082D80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2063DE21E5FAA600082D80 /* ViewController.swift */; };
 		7F2063E221E5FAA600082D80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2063E021E5FAA600082D80 /* Main.storyboard */; };
@@ -14,10 +15,18 @@
 		7F2063E721E5FAA800082D80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2063E521E5FAA800082D80 /* LaunchScreen.storyboard */; };
 		7F2063EF21E60AEE00082D80 /* AdvancedConfigUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2063EE21E60AEE00082D80 /* AdvancedConfigUI.swift */; };
 		7FD117B621ECBED500980B10 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD117B521ECBED500980B10 /* LoginController.swift */; };
+		7FD48C1121F5C4B400CF95D3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD48C1021F5C4B400CF95D3 /* RegisterController.swift */; };
+		7FEDEC5921FEF30500913F78 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5821FEF30500913F78 /* MapViewController.swift */; };
+		7FEDEC5B21FEF72B00913F78 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */; };
+		7FEDEC5D21FEFF0900913F78 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5C21FEFF0900913F78 /* Spot.swift */; };
+		7FEDEC5F21FF0A1700913F78 /* AnadirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5E21FF0A1700913F78 /* AnadirViewController.swift */; };
+		7FFD18FE221178730005724E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD18FD221178730005724E /* TableViewCell.swift */; };
+		7FFD1900221179130005724E /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD18FF221179130005724E /* UITableViewController.swift */; };
 		C84C64F897AA40CE9339144E /* Pods_AppDeMapas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8320B9C0B5EAE994C6E10D8 /* Pods_AppDeMapas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F16E23C220064A600EE9EFC /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		7F2063D921E5FAA600082D80 /* AppDeMapas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDeMapas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2063DC21E5FAA600082D80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F2063DE21E5FAA600082D80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +36,13 @@
 		7F2063E821E5FAA800082D80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F2063EE21E60AEE00082D80 /* AdvancedConfigUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedConfigUI.swift; sourceTree = "<group>"; };
 		7FD117B521ECBED500980B10 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7FD48C1021F5C4B400CF95D3 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		7FEDEC5821FEF30500913F78 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		7FEDEC5C21FEFF0900913F78 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		7FEDEC5E21FF0A1700913F78 /* AnadirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnadirViewController.swift; sourceTree = "<group>"; };
+		7FFD18FD221178730005724E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		7FFD18FF221179130005724E /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		E2F0059D147A7AA7DD898096 /* Pods-AppDeMapas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDeMapas.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppDeMapas/Pods-AppDeMapas.release.xcconfig"; sourceTree = "<group>"; };
 		F5F65981271006D8CCF6CDE6 /* Pods-AppDeMapas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDeMapas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppDeMapas/Pods-AppDeMapas.debug.xcconfig"; sourceTree = "<group>"; };
 		F8320B9C0B5EAE994C6E10D8 /* Pods_AppDeMapas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDeMapas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,14 +98,22 @@
 		7F2063DB21E5FAA600082D80 /* AppDeMapas */ = {
 			isa = PBXGroup;
 			children = (
+				7FEDEC5E21FF0A1700913F78 /* AnadirViewController.swift */,
+				7F16E23C220064A600EE9EFC /* Pin.swift */,
 				7F2063DC21E5FAA600082D80 /* AppDelegate.swift */,
 				7F2063DE21E5FAA600082D80 /* ViewController.swift */,
 				7F2063E021E5FAA600082D80 /* Main.storyboard */,
+				7FD48C1021F5C4B400CF95D3 /* RegisterController.swift */,
 				7FD117B521ECBED500980B10 /* LoginController.swift */,
 				7F2063EE21E60AEE00082D80 /* AdvancedConfigUI.swift */,
 				7F2063E321E5FAA800082D80 /* Assets.xcassets */,
 				7F2063E521E5FAA800082D80 /* LaunchScreen.storyboard */,
 				7F2063E821E5FAA800082D80 /* Info.plist */,
+				7FEDEC5821FEF30500913F78 /* MapViewController.swift */,
+				7FEDEC5C21FEFF0900913F78 /* Spot.swift */,
+				7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */,
+				7FFD18FD221178730005724E /* TableViewCell.swift */,
+				7FFD18FF221179130005724E /* UITableViewController.swift */,
 			);
 			path = AppDeMapas;
 			sourceTree = "<group>";
@@ -168,15 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AppDeMapas/Pods-AppDeMapas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
@@ -190,15 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AppDeMapas-checkManifestLockResult.txt",
 			);
@@ -214,10 +230,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD48C1121F5C4B400CF95D3 /* RegisterController.swift in Sources */,
+				7FEDEC5921FEF30500913F78 /* MapViewController.swift in Sources */,
 				7F2063EF21E60AEE00082D80 /* AdvancedConfigUI.swift in Sources */,
+				7FEDEC5D21FEFF0900913F78 /* Spot.swift in Sources */,
 				7F2063DF21E5FAA600082D80 /* ViewController.swift in Sources */,
+				7FFD1900221179130005724E /* UITableViewController.swift in Sources */,
+				7F16E23D220064A600EE9EFC /* Pin.swift in Sources */,
+				7FFD18FE221178730005724E /* TableViewCell.swift in Sources */,
+				7FEDEC5B21FEF72B00913F78 /* GlobalData.swift in Sources */,
 				7F2063DD21E5FAA600082D80 /* AppDelegate.swift in Sources */,
 				7FD117B621ECBED500980B10 /* LoginController.swift in Sources */,
+				7FEDEC5F21FF0A1700913F78 /* AnadirViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppDeMapas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,6 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppDeMapas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
