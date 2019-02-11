@@ -115,7 +115,7 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
         }
         
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customannotation")
-        annotationView.image = UIImage(named:"recurso7")
+        annotationView.image = UIImage(named:"pin")
         annotationView.canShowCallout = true
         
         return annotationView
