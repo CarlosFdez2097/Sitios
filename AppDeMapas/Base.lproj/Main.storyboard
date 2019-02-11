@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b9X-pD-boh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qk-fW-KcX">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -667,6 +667,35 @@
             </objects>
             <point key="canvasLocation" x="2754.375" y="-65"/>
         </scene>
+        <!--File-->
+        <scene sceneID="bVQ-IQ-Q5g">
+            <objects>
+                <viewController id="6qk-fW-KcX" customClass="File" customModule="AppDeMapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GP6-5K-Ef9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iAV-Vl-pmp">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iAV-Vl-pmp" firstAttribute="leading" secondItem="oZb-6S-GoX" secondAttribute="leading" id="MRL-RF-LlD"/>
+                            <constraint firstItem="iAV-Vl-pmp" firstAttribute="top" secondItem="oZb-6S-GoX" secondAttribute="top" id="S6n-3i-ZLj"/>
+                            <constraint firstItem="iAV-Vl-pmp" firstAttribute="bottom" secondItem="oZb-6S-GoX" secondAttribute="bottom" id="d97-dU-YYQ"/>
+                            <constraint firstItem="iAV-Vl-pmp" firstAttribute="trailing" secondItem="oZb-6S-GoX" secondAttribute="trailing" id="t4V-sg-QgV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oZb-6S-GoX"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapa" destination="iAV-Vl-pmp" id="L0b-yW-AeY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMO-7A-f2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2753.6231884057975" y="664.4021739130435"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="PlN-fG-UfO">
             <objects>
@@ -710,7 +739,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lC8-cd-L5f"/>
-        <segue reference="t2c-0p-9t1"/>
+        <segue reference="Oso-La-bPv"/>
         <segue reference="TIE-O8-s6D"/>
     </inferredMetricsTieBreakers>
 </document>

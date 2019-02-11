@@ -74,7 +74,10 @@ class UITableViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
     }
-    
+}
+
+extension UITableViewController
+{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spot.count
     }

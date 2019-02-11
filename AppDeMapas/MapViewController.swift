@@ -20,26 +20,35 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
         self.mapView.delegate = self
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         let coordenadasOrigen = CLLocationCoordinate2DMake(0, 0)
-        let pin = Pin(pinId: 0 ,pinTitle: "sdfdf" , pinSubTitle: "i.comentario", location: coordenadasOrigen)
-        self.mapView.addAnnotation(pin)
+        
+        var anotacion = MKPointAnnotation()
+        
+        anotacion.coordinate = coordenadasOrigen
+        anotacion.title = "i.nombre"
+        
+        
+        self.mapView.addAnnotation(anotacion)
+        
+        
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         mostrarLugares()
-        self.view.layoutIfNeeded()
+        
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         manager.startUpdatingLocation()
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        mostrarLugares()
-    }
+
     
 
     func mostrarLugares(){
@@ -53,7 +62,7 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
             response in
             
             self.peticion = (response.response?.statusCode)!
-            
+            Spots = []
             if(response.response?.statusCode != 200)
             {
                 let Respuesta = response.result.value as! [String:String]
@@ -70,11 +79,12 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
                 
                 let numeroLugares = sitios.count
                 
-                print(sitios.count)
+                print("sitios ", sitios.count)
+                
+                //self.mapView.removeAnnotations(self.mapView.annotations)
                 
                 for i in 0...numeroLugares-1
                 {
-                    self.mapView.removeAnnotations(self.mapView.annotations)
                     
                     Spots.append(Spot(id: sitios[i]["id"] as! Int, nombre: sitios[i]["name"] as! String, comentario: sitios[i]["description"] as! String, fechaDesde: sitios[i]["dateOfStart"] as! String, fechaHasta: sitios[i]["dateOfEnd"] as! String, latitud: sitios[i]["coordenadasX"] as! Double , longitud: sitios[i]["coordenadasY"] as! Double))
                 }
@@ -83,32 +93,33 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
                 for i in Spots
                 {
                     let coordenadasOrigen = CLLocationCoordinate2DMake(i.latitud, i.longitud)
-                    print(coordenadasOrigen)
-                    let pin = Pin(pinId: i.id ,pinTitle: i.nombre, pinSubTitle: i.comentario, location: coordenadasOrigen)
-                    self.mapView.addAnnotation(pin)
+                    //let pin = Pin(pinId: i.id ,pinTitle: i.nombre, pinSubTitle: i.comentario, location: coordenadasOrigen)
+                    var anotacion = MKPointAnnotation()
                     
+                    anotacion.coordinate = coordenadasOrigen
+                    anotacion.title = i.nombre
+        
+                    
+                    self.mapView.addAnnotation(anotacion)
+
                 }
+                print("pins", self.mapView.annotations.count)
+
             }
         }
     }
-}
-
-extension MapViewController
-{
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
-    {
-       // view.annotation?.title
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-    {
+   /*func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        print("sjndfgsudfgsijdgfs")
         if annotation is MKUserLocation {
             return nil
         }
         
         let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customannotation")
-        annotationView.image = UIImage(named:"recurso7")
+        annotationView.image = UIImage(named:"Recurso 4")
         annotationView.canShowCallout = true
+        
         return annotationView
-    }
+    }*/
 }
+
+

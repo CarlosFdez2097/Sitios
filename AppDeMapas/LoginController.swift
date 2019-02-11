@@ -31,15 +31,11 @@ class LoginController: UIViewController {
         
         if((!(name.text?.isEmpty)!) && (!(name.text?.isEmpty)!))
         {
-            if(loginPeticion(email: name.text! , password: password.text!))
-            {
-                print("segue")
-                performSegue(withIdentifier: "login", sender: nil)
-            }
+           loginPeticion(email: name.text! , password: password.text!)
         }
     }
     
-    func loginPeticion(email:String,password:String) -> Bool
+    func loginPeticion(email:String,password:String)
     {
         print(email,password)
         
@@ -66,16 +62,9 @@ class LoginController: UIViewController {
                 UserDefaults.standard.set(Respuesta["data"]!, forKey: "Token")
                 print(Respuesta["message"]!)
                 print(Respuesta["data"]!)
+                self.performSegue(withIdentifier: "login", sender: nil)
             }
         }
-        
-        if(peticion != 200)
-        {
-            print("error false")
-            return false
-        }
-        print("todo bien ")
-        return true
     }
     
 }
