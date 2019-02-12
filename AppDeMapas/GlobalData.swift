@@ -19,3 +19,5 @@ var coordenadasA:[Double] = [2.1]
 var coordenadasB:[Double] = [1.2]
 //Son arrays en los que meto la info que me devuelve la base de datos
 var Spots:[Spot] = []
+//
+var spotSelected:Spot!

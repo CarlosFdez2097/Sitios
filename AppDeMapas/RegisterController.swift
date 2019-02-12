@@ -23,14 +23,11 @@ class RegisterController: UIViewController {
         
         if((!(nameTxt.text?.isEmpty)!) && (!(emailTxt.text?.isEmpty)!) && (!(passwordTxt.text?.isEmpty)!) )
         {
-            if(RegisterPetition(name: nameTxt.text!, email: emailTxt.text! , password: passwordTxt.text!))
-            {
-                performSegue(withIdentifier: "register", sender: nil)
-            }
+            RegisterPetition(name: nameTxt.text!, email: emailTxt.text! , password: passwordTxt.text!)
         }
     }
     
-    func RegisterPetition(name:String,email:String,password:String) -> Bool {
+    func RegisterPetition(name:String,email:String,password:String)  {
         
         let url: String = "http://localhost:8888/glober/public/api/register"
         
@@ -54,15 +51,9 @@ class RegisterController: UIViewController {
                 UserDefaults.standard.set(Respuesta["data"]!, forKey: "Token")
                 print(Respuesta["message"]!)
                 print(Respuesta["data"]!)
+                self.performSegue(withIdentifier: "register", sender: nil)
             }
         }
-    
-        if(peticion != 200)
-        {
-             return false
-        }
-        return true
     }
-    
 }
 

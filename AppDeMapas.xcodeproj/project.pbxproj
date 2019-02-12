@@ -17,12 +17,13 @@
 		7F2063EF21E60AEE00082D80 /* AdvancedConfigUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2063EE21E60AEE00082D80 /* AdvancedConfigUI.swift */; };
 		7FD117B621ECBED500980B10 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD117B521ECBED500980B10 /* LoginController.swift */; };
 		7FD48C1121F5C4B400CF95D3 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD48C1021F5C4B400CF95D3 /* RegisterController.swift */; };
+		7FEAFD262212BA210079FD95 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEAFD252212BA210079FD95 /* DetalleViewController.swift */; };
 		7FEDEC5921FEF30500913F78 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5821FEF30500913F78 /* MapViewController.swift */; };
 		7FEDEC5B21FEF72B00913F78 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */; };
 		7FEDEC5D21FEFF0900913F78 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5C21FEFF0900913F78 /* Spot.swift */; };
 		7FEDEC5F21FF0A1700913F78 /* AnadirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDEC5E21FF0A1700913F78 /* AnadirViewController.swift */; };
 		7FFD18FE221178730005724E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD18FD221178730005724E /* TableViewCell.swift */; };
-		7FFD1900221179130005724E /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD18FF221179130005724E /* UITableViewController.swift */; };
+		7FFD1900221179130005724E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFD18FF221179130005724E /* TableViewController.swift */; };
 		C84C64F897AA40CE9339144E /* Pods_AppDeMapas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8320B9C0B5EAE994C6E10D8 /* Pods_AppDeMapas.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +40,13 @@
 		7F2063EE21E60AEE00082D80 /* AdvancedConfigUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedConfigUI.swift; sourceTree = "<group>"; };
 		7FD117B521ECBED500980B10 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7FD48C1021F5C4B400CF95D3 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		7FEAFD252212BA210079FD95 /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		7FEDEC5821FEF30500913F78 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		7FEDEC5C21FEFF0900913F78 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		7FEDEC5E21FF0A1700913F78 /* AnadirViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnadirViewController.swift; sourceTree = "<group>"; };
 		7FFD18FD221178730005724E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		7FFD18FF221179130005724E /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
+		7FFD18FF221179130005724E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E2F0059D147A7AA7DD898096 /* Pods-AppDeMapas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDeMapas.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppDeMapas/Pods-AppDeMapas.release.xcconfig"; sourceTree = "<group>"; };
 		F5F65981271006D8CCF6CDE6 /* Pods-AppDeMapas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppDeMapas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppDeMapas/Pods-AppDeMapas.debug.xcconfig"; sourceTree = "<group>"; };
 		F8320B9C0B5EAE994C6E10D8 /* Pods_AppDeMapas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppDeMapas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +118,8 @@
 				7FEDEC5C21FEFF0900913F78 /* Spot.swift */,
 				7FEDEC5A21FEF72B00913F78 /* GlobalData.swift */,
 				7FFD18FD221178730005724E /* TableViewCell.swift */,
-				7FFD18FF221179130005724E /* UITableViewController.swift */,
+				7FFD18FF221179130005724E /* TableViewController.swift */,
+				7FEAFD252212BA210079FD95 /* DetalleViewController.swift */,
 			);
 			path = AppDeMapas;
 			sourceTree = "<group>";
@@ -233,12 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEAFD262212BA210079FD95 /* DetalleViewController.swift in Sources */,
 				7FD48C1121F5C4B400CF95D3 /* RegisterController.swift in Sources */,
 				7FEDEC5921FEF30500913F78 /* MapViewController.swift in Sources */,
 				7F2063EF21E60AEE00082D80 /* AdvancedConfigUI.swift in Sources */,
 				7FEDEC5D21FEFF0900913F78 /* Spot.swift in Sources */,
 				7F2063DF21E5FAA600082D80 /* ViewController.swift in Sources */,
-				7FFD1900221179130005724E /* UITableViewController.swift in Sources */,
+				7FFD1900221179130005724E /* TableViewController.swift in Sources */,
 				7F16E23D220064A600EE9EFC /* Pin.swift in Sources */,
 				7FFD18FE221178730005724E /* TableViewCell.swift in Sources */,
 				7FEDEC5B21FEF72B00913F78 /* GlobalData.swift in Sources */,

@@ -10,8 +10,9 @@ import UIKit
 
 class TableViewCell: UITableViewCell
 {
-    @IBOutlet weak var Name: UITextField!
-    @IBOutlet weak var Description: UITextField!
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Description: UILabel!
+    
     
     var id:Int = 0
     var nombre:String = ""

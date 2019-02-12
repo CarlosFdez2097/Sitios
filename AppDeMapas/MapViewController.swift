@@ -25,33 +25,18 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-        let coordenadasOrigen = CLLocationCoordinate2DMake(0, 0)
-        
-        var anotacion = MKPointAnnotation()
-        
-        anotacion.coordinate = coordenadasOrigen
-        anotacion.title = "i.nombre"
-        
-        
-        self.mapView.addAnnotation(anotacion)
-        
-        
-        
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         mostrarLugares()
         
     }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         manager.startUpdatingLocation()
     }
     
-
-    
-
-    func mostrarLugares(){
+    func mostrarLugares() {
 
         let url: String = "http://localhost:8888/glober/public/index.php/api/spot"
         let token = UserDefaults.standard.string(forKey: "Token")
@@ -66,7 +51,6 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
             if(response.response?.statusCode != 200)
             {
                 let Respuesta = response.result.value as! [String:String]
-                print(Respuesta)
                 
                 let alert = UIAlertController(title: Respuesta as! String, message: Respuesta as! String, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -79,37 +63,23 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
                 
                 let numeroLugares = sitios.count
                 
-                print("sitios ", sitios.count)
+                self.mapView.removeAnnotations(self.mapView.annotations)
                 
-                //self.mapView.removeAnnotations(self.mapView.annotations)
-                
-                for i in 0...numeroLugares-1
-                {
+                for i in 0...numeroLugares-1 {
                     
                     Spots.append(Spot(id: sitios[i]["id"] as! Int, nombre: sitios[i]["name"] as! String, comentario: sitios[i]["description"] as! String, fechaDesde: sitios[i]["dateOfStart"] as! String, fechaHasta: sitios[i]["dateOfEnd"] as! String, latitud: sitios[i]["coordenadasX"] as! Double , longitud: sitios[i]["coordenadasY"] as! Double))
                 }
                 
-                
-                for i in Spots
-                {
+                for i in Spots {
                     let coordenadasOrigen = CLLocationCoordinate2D(latitude: i.latitud, longitude: i.longitud)
-                    //let pin = Pin(pinId: i.id ,pinTitle: i.nombre, pinSubTitle: i.comentario, location: coordenadasOrigen)
-                    var anotacion = MKPointAnnotation()
-                    
-                    anotacion.coordinate = coordenadasOrigen
-                    anotacion.title = i.nombre
-        
-                    
-                    self.mapView.addAnnotation(anotacion)
-
+                    let pin = Pin(pinId: i.id ,pinTitle: i.nombre, pinSubTitle: i.comentario, location: coordenadasOrigen)
+                    self.mapView.addAnnotation(pin)
                 }
-                print("pins", self.mapView.annotations.count)
-
             }
         }
     }
-   func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        print("sjndfgsudfgsijdgfs")
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
             return nil
         }
@@ -119,6 +89,18 @@ class MapViewController: UIViewController ,CLLocationManagerDelegate, MKMapViewD
         annotationView.canShowCallout = true
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+                
+        for i in Spots {
+            
+            if(i.nombre == view.annotation?.title!!)
+            {
+                spotSelected = i
+                self.performSegue(withIdentifier: "detalle", sender: nil)
+            }
+        }
     }
 }
 

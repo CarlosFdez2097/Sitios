@@ -12,7 +12,7 @@ import CoreLocation
 import Alamofire
 
 
-class AnadirViewController: UIViewController , CLLocationManagerDelegate{
+class AnadirViewController: UIViewController , CLLocationManagerDelegate ,MKMapViewDelegate{
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var description1: UITextField!
@@ -27,6 +27,7 @@ class AnadirViewController: UIViewController , CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -48,17 +49,13 @@ class AnadirViewController: UIViewController , CLLocationManagerDelegate{
         {
             if(newCoords.latitude != 0 && newCoords.longitude != 0)
             {
-                if(crearLugar())
-                {
-                    
-                }
-                
+                    crearLugar()
             }else
             {
                 let alert = UIAlertController(title: "Por favor pon la ubacion en el mapa ", message: "Por favor pon la ubacion en el mapa ", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true)
-            }
+            } 
         }else
         {
             let alert = UIAlertController(title: "Todos los campos deben estar rellenos", message: "Nada puede estar vacio", preferredStyle: .alert)
@@ -67,7 +64,7 @@ class AnadirViewController: UIViewController , CLLocationManagerDelegate{
         }
     }
     
-    func crearLugar() ->Bool{
+    func crearLugar(){
         
         let start = formarFecha(date: dateStart.date)
         let end = formarFecha(date: dateEnd.date)
@@ -89,21 +86,30 @@ class AnadirViewController: UIViewController , CLLocationManagerDelegate{
             
             if(response.response?.statusCode != 200)
             {
+                let alert = UIAlertController(title: "Por favor pon la ubacion en el mapa ", message: "Por favor pon la ubacion en el mapa ", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                
                 print(Respuesta["message"]!)
                 print("error")
             }else
             {
+                let alert = UIAlertController(title: "Lugar creado ", message: "Puedes volver a crear otro lugar", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                
+                self.name.text = " "
+                self.description1.text = " "
+                self.dateStart.setDate(Date.init(), animated: true)
+                self.dateEnd.setDate(Date.init(), animated: true)
+                self.mapView.removeAnnotations(self.mapView.annotations)
+                
+                
                 UserDefaults.standard.set(Respuesta["data"]!, forKey: "message")
                 print(Respuesta["message"]!)
                 print(Respuesta["data"]!)
             }
         }
-        
-        if(peticion != 200)
-        {
-            return false
-        }
-        return true
     }
    
     
@@ -113,9 +119,21 @@ class AnadirViewController: UIViewController , CLLocationManagerDelegate{
         dataformer.locale = Locale(identifier: "en_US_POSIX")
         dataformer.dateFormat = "yyyy/MM/dd"
         
-        var finalDate : String = dataformer.string(from: date)
+        let finalDate : String = dataformer.string(from: date)
         
         return finalDate
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "customannotation")
+        annotationView.image = UIImage(named:"pin")
+        annotationView.canShowCallout = true
+        
+        return annotationView
     }
     
     @objc func action(gestureRecognizer: UIGestureRecognizer) {
